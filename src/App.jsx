@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       {/* <Accordian /> */}
-      <ColorGenerator />
+      {/* <ColorGenerator /> */}
     </>
   )
 }

@@ -23,7 +23,7 @@ const Accordian = () => {
     }
 
     return (
-        <div className='flex flex-col w-screen h-screen justify-center items-center gap-3'>
+        <div className='flex flex-col h-screen justify-center items-center gap-3'>
             <button onClick={() => setEnableMultiSelection(!enableMultiSelection)} className='rounded-sm bg-green-400 p-1 w-20'>Multiple Selection</button>
             {
                 data.map((d) => {
