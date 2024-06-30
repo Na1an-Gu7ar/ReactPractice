@@ -2,18 +2,29 @@ import React, { useEffect, useState } from 'react'
 
 const index = () => {
 
-    const [itemCount, setItemCount] = useState(1)
+    const [itemCount, setItemCount] = useState(5)
     const [load, setLoad] = useState([])
+    const [ferror, setFError] = useState('null')
 
     const loadData = async () => {
         let url = `https://dummyjson.com/products?limit=${itemCount}`
-        let response = await fetch(url)
-        let data = await response.json()
-        setLoad(data.products)
+        try {
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`)
+            }
+            else {
+                let response = await fetch(url)
+                let data = await response.json()
+                setLoad(data.products)
+            }
+        } catch (error) {
+            console.log('Error fetching');
+            setFError('Error fetching')
+        }
     }
 
     const loadMore = async () => {
-        setItemCount(itemCount + 1)
+        setItemCount(itemCount + 5)
         await loadData()
     }
 
@@ -21,15 +32,17 @@ const index = () => {
         loadData()
     }, [])
 
+    console.log(load.length);
     return (
-        <div className='flex flex-row w-screen h-screen'>
-            {load.map((d) => {
-                return <div className='bg-gray-600 h-40' key={d.id}>
-                    <img className='w-40 h-40 bg-black' src={d.images} />
-                </div>
-            })}
+        <div className='flex flex-col w-screen h-screen items-center gap-5 overflow-x-hidden p-5'>
+            <div className='flex flex-row justify-between flex-wrap'>
+                {load.map((d) => {
+                    return <img key={d.id} className='w-60 shadow-xl rounded' src={d.images ? d.images : ferror} alt={d.images} />
+                })}
+            </div>
 
-            <button onClick={() => loadMore()} className='absolute'>Load More</button>
+            <button disabled={load.length === 100 ? true : false} onClick={() => loadMore()} className='h-10 bg-amber-500 w-28 rounded'>Load More</button>
+
         </div>
     )
 }
