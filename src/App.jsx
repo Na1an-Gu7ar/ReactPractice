@@ -3,6 +3,7 @@ import Accordian from './Components/Accordian/Accordian'
 import ColorGenerator from './Components/RandomColor/index'
 import StartRating from './Components/StartRating/index'
 import ImageSlider from './Components/Image-slider/index'
+import LoadMore from './Components/Load_more/index'
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
       {/* <Accordian /> */}
       {/* <ColorGenerator /> */}
       {/* <StartRating /> */}
-      <ImageSlider />
+      {/* <ImageSlider /> */}
+      <LoadMore />
     </>
   )
 }
