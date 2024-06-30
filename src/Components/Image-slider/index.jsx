@@ -33,9 +33,9 @@ const index = () => {
 
     return (
         <div className='w-screen h-screen flex justify-center'>
-            <div className="w-60 absolute card">
+            <div className="w-80 absolute card">
                 {data && data.length ? data.map((d) => (
-                    <img key={d.id} className={page != d.id ? 'absolute w-80 z-40' : 'hidden'} src={`${d.download_url}`} />
+                    <img key={d.id} className={page != d.id ? 'absolute w-96 z-40' : 'hidden'} src={`${d.download_url}`} />
                 )) : null}
             </div>
 
