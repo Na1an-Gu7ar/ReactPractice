@@ -4,22 +4,23 @@ const index = () => {
 
     const [itemCount, setItemCount] = useState(5)
     const [load, setLoad] = useState([])
-    const [ferror, setFError] = useState('null')
+    const [loading, setLoading] = useState(false)
 
     const loadData = async () => {
-        let url = `https://dummyjson.com/products?limit=${itemCount}`
+        setLoading(true)
+
         try {
+            let url = `https://dummyjson.com/products?limit=${itemCount}`
+            let response = await fetch(url)
             if (!response.ok) {
-                throw new Error(`API request failed with status ${response.status}`)
+                throw new Error(`Error: ${response.status}: ${response.statusText}`)
             }
-            else {
-                let response = await fetch(url)
-                let data = await response.json()
-                setLoad(data.products)
-            }
-        } catch (error) {
-            console.log('Error fetching');
-            setFError('Error fetching')
+            let data = await response.json()
+            setLoad(data.products)
+        } catch (err) {
+            setFError(err.massage)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -29,19 +30,18 @@ const index = () => {
     }
 
     useEffect(() => {
-        loadData()
-    }, [])
+        
+    }, [load])
 
-    console.log(load.length);
     return (
         <div className='flex flex-col w-screen h-screen items-center gap-5 overflow-x-hidden p-5'>
             <div className='flex flex-row justify-between flex-wrap'>
-                {load.map((d) => {
-                    return <img key={d.id} className='w-60 shadow-xl rounded' src={d.images ? d.images : ferror} alt={d.images} />
+                {load && load.map((d) => {
+                    return <img key={d.id} className='w-60 shadow-xl rounded' src={d.images[0]} alt={d.title} />
                 })}
             </div>
 
-            <button disabled={load.length === 100 ? true : false} onClick={() => loadMore()} className='h-10 bg-amber-500 w-28 rounded'>Load More</button>
+            {loading ? <p>Loading...</p> : <button disabled={load.length === 100 ? true : false} onClick={() => loadMore()} className='h-10 bg-amber-500 w-28 rounded'>Load More</button>}
 
         </div>
     )
