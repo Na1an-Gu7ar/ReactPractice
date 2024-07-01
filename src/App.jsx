@@ -4,6 +4,7 @@ import ColorGenerator from './Components/RandomColor/index'
 import StartRating from './Components/StartRating/index'
 import ImageSlider from './Components/Image-slider/index'
 import LoadMore from './Components/Load_more/index'
+import NavigationMenu from './Components/NavigationMenu/index'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
       {/* <ColorGenerator /> */}
       {/* <StartRating /> */}
       {/* <ImageSlider /> */}
-      <LoadMore />
+      {/* <LoadMore /> */}
+      <NavigationMenu />
     </>
   )
 }
