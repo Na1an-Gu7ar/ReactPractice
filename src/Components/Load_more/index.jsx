@@ -30,8 +30,12 @@ const index = () => {
     }
 
     useEffect(() => {
+        loadData()
+    }, [])
+
+    // useEffect(() => {
         
-    }, [load])
+    // }, [load])
 
     return (
         <div className='flex flex-col w-screen h-screen items-center gap-5 overflow-x-hidden p-5'>
