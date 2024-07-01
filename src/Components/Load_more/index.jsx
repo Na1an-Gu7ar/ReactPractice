@@ -7,21 +7,20 @@ const index = () => {
     const [loading, setLoading] = useState(false)
 
     const loadData = async () => {
-        setLoading(true)
-
+        
         try {
+            setLoading(true)
             let url = `https://dummyjson.com/products?limit=${itemCount}`
             let response = await fetch(url)
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status}: ${response.statusText}`)
-            }
             let data = await response.json()
-            setLoad(data.products)
+            if(data && data.products && data.products.length){
+                setLoad(data.products)
+                setLoading(false)
+            }
         } catch (err) {
-            setFError(err.massage)
-        } finally {
+            setFError(err)
             setLoading(false)
-        }
+        } 
     }
 
     const loadMore = async () => {
@@ -31,11 +30,7 @@ const index = () => {
 
     useEffect(() => {
         loadData()
-    }, [])
-
-    // useEffect(() => {
-        
-    // }, [load])
+    }, [itemCount])
 
     return (
         <div className='flex flex-col w-screen h-screen items-center gap-5 overflow-x-hidden p-5'>
@@ -45,7 +40,8 @@ const index = () => {
                 })}
             </div>
 
-            {loading ? <p>Loading...</p> : <button disabled={load.length === 100 ? true : false} onClick={() => loadMore()} className='h-10 bg-amber-500 w-28 rounded'>Load More</button>}
+            {loading ? <p>Loading...</p> : <button disabled={load.length === 100 ? true : false} onClick={() => loadMore()} className='h-10 bg-amber-500 w-28 rounded'>{load.length===100 ? 'No More Data' : 'Load More'}</button>}
+
 
         </div>
     )
