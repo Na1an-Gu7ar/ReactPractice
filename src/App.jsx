@@ -5,6 +5,7 @@ import StartRating from './Components/StartRating/index'
 import ImageSlider from './Components/Image-slider/index'
 import LoadMore from './Components/Load_more/index'
 import NavigationMenu from './Components/NavigationMenu/index'
+import data from './Components/NavigationMenu/data'
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       {/* <StartRating /> */}
       {/* <ImageSlider /> */}
       {/* <LoadMore /> */}
-      <NavigationMenu />
+      <NavigationMenu menu={data}/>
     </>
   )
 }
