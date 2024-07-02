@@ -6,6 +6,7 @@ import ImageSlider from './Components/Image-slider/index'
 import LoadMore from './Components/Load_more/index'
 import NavigationMenu from './Components/NavigationMenu/index'
 import data from './Components/NavigationMenu/data'
+import QR from './Components/QR/index'
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
       {/* <StartRating /> */}
       {/* <ImageSlider /> */}
       {/* <LoadMore /> */}
-      <NavigationMenu menu={data}/>
+      {/* <NavigationMenu menu={data}/> */}
+      <QR />
     </>
   )
 }
