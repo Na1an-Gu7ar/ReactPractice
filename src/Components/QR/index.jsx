@@ -5,8 +5,8 @@ const index = () => {
     const [value, setValue] = useState('')
 
     return (
-        <div className='w-screen h-screen flex flex-col justify-center items-center'>
-            <input type="text" value={value} placeholder='Enter anything' onChange={(e) => setValue(e.target.value)} />
+        <div className='w-screen h-screen flex flex-col justify-center items-center gap-3'>
+            <input type="text" value={value} placeholder='Enter anything' className='border-solid border-2 border-gray-600 rounded' onChange={(e) => setValue(e.target.value)} />
             <QRCode value={value} />
         </div>
     )
