@@ -7,7 +7,6 @@ const index = () => {
     return (
         <div className='w-screen h-screen flex flex-col justify-center items-center'>
             <input type="text" value={value} placeholder='Enter anything' onChange={(e) => setValue(e.target.value)} />
-            {console.log(value)}
             <QRCode value={value} />
         </div>
     )
