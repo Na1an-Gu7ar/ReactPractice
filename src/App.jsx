@@ -7,6 +7,7 @@ import LoadMore from './Components/Load_more/index'
 import NavigationMenu from './Components/NavigationMenu/index'
 import data from './Components/NavigationMenu/data'
 import QR from './Components/QR/index'
+import LigthDark from './Components/LightDark/index'
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
       {/* <ImageSlider /> */}
       {/* <LoadMore /> */}
       {/* <NavigationMenu menu={data}/> */}
-      <QR />
+      {/* <QR /> */}
+      <LigthDark />
     </>
   )
 }
