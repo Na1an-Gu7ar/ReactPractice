@@ -8,6 +8,7 @@ import NavigationMenu from './Components/NavigationMenu/index'
 import data from './Components/NavigationMenu/data'
 import QR from './Components/QR/index'
 import LigthDark from './Components/LightDark/index'
+import ScrollIndicator from './Components/Scroll-Indicator/index'
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
       {/* <LoadMore /> */}
       {/* <NavigationMenu menu={data}/> */}
       {/* <QR /> */}
-      <LigthDark />
+      {/* <LigthDark /> */}
+      <ScrollIndicator />
     </>
   )
 }
