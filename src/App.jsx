@@ -10,6 +10,7 @@ import QR from './Components/QR/index'
 import LigthDark from './Components/LightDark/index'
 import ScrollIndicator from './Components/Scroll-Indicator/index'
 import Tabs from './Components/Tabs/index'
+import ModalPopup from './Components/ModalPopup/index'
 
 function App() {
 
@@ -24,7 +25,8 @@ function App() {
       {/* <QR /> */}
       {/* <LigthDark /> */}
       {/* <ScrollIndicator /> */}
-      <Tabs />
+      {/* <Tabs /> */}
+      <ModalPopup />
     </>
   )
 }
