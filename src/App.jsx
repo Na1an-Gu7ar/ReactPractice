@@ -9,6 +9,7 @@ import data from './Components/NavigationMenu/data'
 import QR from './Components/QR/index'
 import LigthDark from './Components/LightDark/index'
 import ScrollIndicator from './Components/Scroll-Indicator/index'
+import Tabs from './Components/Tabs/index'
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
       {/* <NavigationMenu menu={data}/> */}
       {/* <QR /> */}
       {/* <LigthDark /> */}
-      <ScrollIndicator />
+      {/* <ScrollIndicator /> */}
+      <Tabs />
     </>
   )
 }
