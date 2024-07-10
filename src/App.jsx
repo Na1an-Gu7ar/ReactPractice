@@ -11,6 +11,7 @@ import LigthDark from './Components/LightDark/index'
 import ScrollIndicator from './Components/Scroll-Indicator/index'
 import Tabs from './Components/Tabs/index'
 import ModalPopup from './Components/ModalPopup/index'
+import ProfileFinder from './Components/Profile-finder/index'
 
 function App() {
 
@@ -26,7 +27,8 @@ function App() {
       {/* <LigthDark /> */}
       {/* <ScrollIndicator /> */}
       {/* <Tabs /> */}
-      <ModalPopup />
+      {/* <ModalPopup /> */}
+      <ProfileFinder />
     </>
   )
 }
