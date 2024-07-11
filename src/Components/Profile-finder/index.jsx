@@ -6,10 +6,7 @@ const index = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    // fetch(`https://api.github.com/users/${username}`)
-
     const loadData = async () => {
-        // setLoading(true)
         try {
             setLoading(true)
             let url = `https://api.github.com/users/${username}`
