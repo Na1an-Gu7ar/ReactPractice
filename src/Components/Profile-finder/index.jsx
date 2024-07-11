@@ -11,17 +11,17 @@ const index = () => {
             setLoading(true)
             let url = `https://api.github.com/users/${username}`
             let response = await fetch(url)
-            if(response.ok){
+            if (response.ok) {
                 let data = await response.json()
                 setProfiles([data])
-            }else{
-                setError('Profile Not Exist')
+                setLoading(false)
+                setUsername('')
+            } else {
+                setError(`Profile "${username}" Not Exist`)
             }
-
         } catch (err) {
             setLoading(false)
         } finally {
-            setLoading(false)
         }
     }
 
