@@ -12,6 +12,7 @@ import ScrollIndicator from './Components/Scroll-Indicator/index'
 import Tabs from './Components/Tabs/index'
 import ModalPopup from './Components/ModalPopup/index'
 import ProfileFinder from './Components/Profile-finder/index'
+import SearchAutoComplete from './Components/SearchAutoComplete/index'
 
 function App() {
 
@@ -28,7 +29,8 @@ function App() {
       {/* <ScrollIndicator /> */}
       {/* <Tabs /> */}
       {/* <ModalPopup /> */}
-      <ProfileFinder />
+      {/* <ProfileFinder /> */}
+      <SearchAutoComplete />
     </>
   )
 }
