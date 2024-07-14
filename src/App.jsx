@@ -13,6 +13,7 @@ import Tabs from './Components/Tabs/index'
 import ModalPopup from './Components/ModalPopup/index'
 import ProfileFinder from './Components/Profile-finder/index'
 import SearchAutoComplete from './Components/SearchAutoComplete/index'
+import TicTacToe from './Components/Tic-Tac-Toe/index'
 
 function App() {
 
@@ -30,7 +31,8 @@ function App() {
       {/* <Tabs /> */}
       {/* <ModalPopup /> */}
       {/* <ProfileFinder /> */}
-      <SearchAutoComplete />
+      {/* <SearchAutoComplete /> */}
+      <TicTacToe />
     </>
   )
 }
