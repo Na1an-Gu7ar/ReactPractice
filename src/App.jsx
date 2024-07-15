@@ -14,6 +14,8 @@ import ModalPopup from './Components/ModalPopup/index'
 import ProfileFinder from './Components/Profile-finder/index'
 import SearchAutoComplete from './Components/SearchAutoComplete/index'
 import TicTacToe from './Components/Tic-Tac-Toe/index'
+import FeatureFlag from './Components/feature-flag/index'
+import FeatureFlagsProvider from './Components/feature-flag/context/index'
 
 function App() {
 
@@ -32,7 +34,10 @@ function App() {
       {/* <ModalPopup /> */}
       {/* <ProfileFinder /> */}
       {/* <SearchAutoComplete /> */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
+      <FeatureFlagsProvider>
+        <FeatureFlag />
+      </FeatureFlagsProvider>
     </>
   )
 }
