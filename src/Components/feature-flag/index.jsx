@@ -7,12 +7,6 @@ import SearchAutoComplete from '../SearchAutoComplete/index'
 import Accordian from '../Accordian/Accordian'
 
 const index = () => {
-
-    // showLightAndDarkMode: true,
-    // showTicTacToe: true,
-    // showQR: true,
-    // showSearchAutoComplete: false,
-    // showAccordian: false
     const {loading, enabledFlags} = useContext(FeatureFlagsContext)
 
     const componentsToRender = [
