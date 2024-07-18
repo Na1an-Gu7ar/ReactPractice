@@ -16,6 +16,7 @@ import SearchAutoComplete from './Components/SearchAutoComplete/index'
 import TicTacToe from './Components/Tic-Tac-Toe/index'
 import FeatureFlag from './Components/feature-flag/index'
 import FeatureFlagsProvider from './Components/feature-flag/context/index'
+import UseFetch from './Components/Use_fetch/test'
 
 function App() {
 
@@ -35,9 +36,10 @@ function App() {
       {/* <ProfileFinder /> */}
       {/* <SearchAutoComplete /> */}
       {/* <TicTacToe /> */}
-      <FeatureFlagsProvider>
+      {/* <FeatureFlagsProvider>
         <FeatureFlag />
-      </FeatureFlagsProvider>
+      </FeatureFlagsProvider> */}
+      <UseFetch />
     </>
   )
 }
