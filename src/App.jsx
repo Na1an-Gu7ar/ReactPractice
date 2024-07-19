@@ -17,6 +17,7 @@ import TicTacToe from './Components/Tic-Tac-Toe/index'
 import FeatureFlag from './Components/feature-flag/index'
 import FeatureFlagsProvider from './Components/feature-flag/context/index'
 import UseFetch from './Components/Use_fetch/test'
+import UseOutsideClickHook from './Components/OutsideClickHook/index'
 
 function App() {
 
@@ -39,7 +40,8 @@ function App() {
       {/* <FeatureFlagsProvider>
         <FeatureFlag />
       </FeatureFlagsProvider> */}
-      <UseFetch />
+      {/* <UseFetch /> */}
+      <UseOutsideClickHook />
     </>
   )
 }
