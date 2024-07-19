@@ -19,6 +19,7 @@ import FeatureFlagsProvider from './Components/feature-flag/context/index'
 import UseFetch from './Components/Use_fetch/test'
 import UseOutsideClickHook from './Components/OutsideClickHook/index'
 import UseResizeHook from './Components/UseResizeHook/index'
+import ScrollTopBottom from './Components/ScrollTopBottom/index'
 
 function App() {
 
@@ -43,7 +44,8 @@ function App() {
       </FeatureFlagsProvider> */}
       {/* <UseFetch /> */}
       {/* <UseOutsideClickHook /> */}
-      <UseResizeHook />
+      {/* <UseResizeHook /> */}
+      <ScrollTopBottom />
     </>
   )
 }
