@@ -10,7 +10,7 @@ const index = () => {
     const fetchData = async () => {
         setLoading(true)
         try {
-            let url = 'https://dummyjson.com/products'
+            let url = 'https://dummyjson.com/products?limit=50'
             let response = await fetch(url)
             if(!response.ok){
                 throw new Error(response.statusText)
@@ -24,11 +24,19 @@ const index = () => {
         }
     }
 
-    const scrollBottom = () => {
+    const handleScroll = () => {
         if(window.scrollY > 10){
-            window.scroll(0, 0)
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth',
+            })
         } else{
-            window.scroll(0, window.innerHeight)
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                left: 0,
+                behavior: 'smooth',
+            })
         }
     }    
 
@@ -41,11 +49,11 @@ const index = () => {
         <div>
             {loading ? <div>Loading...</div> : null}
             {error ? {error} : null}
-            <button onClick={() => scrollBottom()}>Bottom</button>
+            <button onClick={() => handleScroll()} className='bg-gray-400 p-1 rounded-md'>Bottom</button>
             {data && data.map((d) => {
                 return <div key={d.id}>{d.title}</div>
             })}
-            <button onClick={() => scrollBottom()}>Up</button>
+            <button onClick={() => handleScroll()} className='bg-gray-400 p-1 rounded-md'>Up</button>
         </div>
     )
 }
