@@ -20,6 +20,7 @@ import UseFetch from './Components/Use_fetch/test'
 import UseOutsideClickHook from './Components/OutsideClickHook/index'
 import UseResizeHook from './Components/UseResizeHook/index'
 import ScrollTopBottom from './Components/ScrollTopBottom/index'
+import ScrollToSection from './Components/ScrollToSection/index'
 
 function App() {
 
@@ -45,7 +46,8 @@ function App() {
       {/* <UseFetch /> */}
       {/* <UseOutsideClickHook /> */}
       {/* <UseResizeHook /> */}
-      <ScrollTopBottom />
+      {/* <ScrollTopBottom /> */}
+      <ScrollToSection />
     </>
   )
 }
