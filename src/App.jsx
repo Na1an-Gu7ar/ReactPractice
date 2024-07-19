@@ -18,6 +18,7 @@ import FeatureFlag from './Components/feature-flag/index'
 import FeatureFlagsProvider from './Components/feature-flag/context/index'
 import UseFetch from './Components/Use_fetch/test'
 import UseOutsideClickHook from './Components/OutsideClickHook/index'
+import UseResizeHook from './Components/UseResizeHook/index'
 
 function App() {
 
@@ -41,7 +42,8 @@ function App() {
         <FeatureFlag />
       </FeatureFlagsProvider> */}
       {/* <UseFetch /> */}
-      <UseOutsideClickHook />
+      {/* <UseOutsideClickHook /> */}
+      <UseResizeHook />
     </>
   )
 }
