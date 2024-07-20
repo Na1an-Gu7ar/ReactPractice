@@ -31,8 +31,6 @@ const index = () => {
         fetchData("pune")
     }, [])
 
-    console.log(data);
-
     return (
         <div className='flex flex-col w-screen h-screen gap-16 items-center'>
             <div className='flex flex-row gap-5 justify-center p-1'>
@@ -42,18 +40,19 @@ const index = () => {
             {loading ? <div>Loading...</div> : error ? <div>{error}</div> :
                 <div className='w-2/5 h-2/5 rounded border-2 border-solid'>
                     <div className='text-3xl'>{data?.name}, {data?.sys?.country}</div>
-                    <div className='flex flex-row gap-5 h-24 flex-wrap w-64 p-5 items-center'>
-                        <div className='text-4xl'>{Math.round(data?.main?.temp - 273.15)}℃</div>
+                    <div className='flex flex-row gap-5 flex-wrap w-64 p-5 items-center'>
+                        <div className='text-4xl'>{Math.round(data?.main?.temp - 273.15)}<span className='text-lg align-super'>℃</span></div>
                         <div>
                             {Math.round(data?.clouds?.all) === 100 ? <div className='text-2xl'>Cloudy</div> : Math.round(data?.clouds?.all) < 70 ? <div className='text-2xl'>Sunny</div> : <div className='text-2xl'>Clear</div>}
-                            <div>Feels like {Math.round(data?.main?.feels_like - 273.15)}℃</div>
+                            <div>Feels like {Math.round(data?.main?.feels_like - 273.15)}°</div>
                         </div>
                     </div>
-                    <div className='flex justify-end'>There will be {data?.weather[0]?.description}. The low will be {Math.round(data?.main?.temp_min - 273.15)}°</div>
-                    <div className='h-24 flex flex-row gap-5 justify-center items-center'>
+                    <div className='flex justify-end p-5'>There will be {data?.weather[0]?.description}. The low will be {Math.round(data?.main?.temp_min - 273.15)}°</div>
+                    <div className='flex flex-row gap-5 justify-center items-center'>
                         <div>Wind<br/>{Math.round(data?.wind?.speed)} km/h</div>
                         <div>Pressure<br/>{data?.main?.pressure} mb</div>
                         <div>Humidity<br/>{data?.main?.humidity}%</div>
+                        <div>Visibility<br/>{Math.round(data?.visibility/1000)} km</div>
                     </div>
                 </div>
             }
