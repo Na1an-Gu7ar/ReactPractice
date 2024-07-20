@@ -21,6 +21,7 @@ import UseOutsideClickHook from './Components/OutsideClickHook/index'
 import UseResizeHook from './Components/UseResizeHook/index'
 import ScrollTopBottom from './Components/ScrollTopBottom/index'
 import ScrollToSection from './Components/ScrollToSection/index'
+import Weather from './Components/WeatherAPI/index'
 
 function App() {
 
@@ -47,7 +48,8 @@ function App() {
       {/* <UseOutsideClickHook /> */}
       {/* <UseResizeHook /> */}
       {/* <ScrollTopBottom /> */}
-      <ScrollToSection />
+      {/* <ScrollToSection /> */}
+      <Weather />
     </>
   )
 }
