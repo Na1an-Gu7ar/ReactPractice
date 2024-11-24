@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { FetchDataContext } from './context'
 
 const index = () => {
-    const [item, setItem] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+    const {item, setItem, loading, setLoading} = useContext(FetchDataContext)
 
     const fetchData = async () => {
         try {
