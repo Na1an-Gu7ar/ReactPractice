@@ -22,6 +22,7 @@ import UseResizeHook from './Components/UseResizeHook/index'
 import ScrollTopBottom from './Components/ScrollTopBottom/index'
 import ScrollToSection from './Components/ScrollToSection/index'
 import Weather from './Components/WeatherAPI/index'
+import FetchData from './Components/fetchData/index'
 
 function App() {
 
@@ -49,7 +50,8 @@ function App() {
       {/* <UseResizeHook /> */}
       {/* <ScrollTopBottom /> */}
       {/* <ScrollToSection /> */}
-      <Weather />
+      {/* <Weather /> */}
+        <FetchData />
     </>
   )
 }
